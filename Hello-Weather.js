@@ -669,12 +669,13 @@ let Lunar = lunarDate['lunarYear']+lunarDate['lunarMonth']+lunarDate['lunarDay']
 function randomGreeting(greetingArray) {
 	return Math.floor(Math.random() * greetingArray.length);
 }
-var greeting = new String()
-if (hour    < 5  )  {greeting = localizedText.sleepGreeting;} 
-if (hour    < 11 )  {greeting = localizedText.morningGreeting;}
-if (hour-12 < 1  )  {greeting = localizedText.noonGreeting;} 
-if (hour-12 < 6  )  {greeting = localizedText.afternoonGreeting;} 
-if (hour-12 < 11 )  {greeting = localizedText.eveningGreeting;} 
+var greeting = new String("Howdy.")
+if (hour >= 0  && hour < 5  ) {greeting = localizedText.sleepGreeting;} 
+if (hour >= 5  && hour < 11 ) {greeting = localizedText.morningGreeting;}
+if (hour >= 11 && hour < 13 ) {greeting = localizedText.noonGreeting;} 
+if (hour >= 13 && hour < 17 ) {greeting = localizedText.afternoonGreeting;} 
+if (hour >= 17 && hour < 22 ) {greeting = localizedText.eveningGreeting;} 
+if (hour >= 22 && hoor < 23 ) {greeting = localizedText.nightGreeting;} 
 
 // Overwrite greeting if calculated holiday
 // 如果是特定假期,则使用假期问候语
